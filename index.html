@@ -1,11 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Twitter</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>X — Home</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
 </head>
 <body>
-    
+
+  <div class="app-layout">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar-left">
+      <a href="index.html" class="logo">
+        <i class="bi bi-twitter-x"></i>
+      </a>
+      <nav class="sidebar-nav">
+        <a href="index.html" class="nav-item active">
+          <i class="bi bi-house-fill"></i>
+          <span>Home</span>
+        </a>
+        <a href="explore.html" class="nav-item">
+          <i class="bi bi-search"></i>
+          <span>Explore</span>
+        </a>
+        <a href="notifications.html" class="nav-item">
+          <i class="bi bi-bell"></i>
+          <span>Notifications</span>
+        </a>
+        <a href="messages.html" class="nav-item">
+          <i class="bi bi-envelope"></i>
+          <span>Messages</span>
+        </a>
+        <a href="bookmarks.html" class="nav-item">
+          <i class="bi bi-bookmark"></i>
+          <span>Bookmarks</span>
+        </a>
+        <a href="profile.html" class="nav-item">
+          <i class="bi bi-person"></i>
+          <span>Profile</span>
+        </a>
+        <button class="tweet-btn">Post</button>
+      </nav>
+      <div class="sidebar-user">
+        <img src="images/avatar.jpg" alt="Your avatar" class="avatar-sm"/>
+        <div class="user-info">
+          <span class="user-name">Mukelani</span>
+          <span class="user-handle">@studentzero68</span>
+        </div>
+        <i class="bi bi-three-dots"></i>
+      </div>
+    </aside>
+
+    <!-- MAIN FEED -->
+    <main class="main-feed">
+      <header class="feed-header">
+        <h1>Home</h1>
+      </header>
+      <p class="placeholder-text">Feed coming soon...</p>
+    </main>
+
+    <!-- RIGHT SIDEBAR -->
+    <aside class="sidebar-right">
+      <p class="placeholder-text">Trends coming soon...</p>
+    </aside>
+
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
