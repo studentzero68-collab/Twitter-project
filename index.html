@@ -41,7 +41,7 @@
           <i class="bi bi-person"></i>
           <span>Profile</span>
         </a>
-        <button class="tweet-btn">Post</button>
+        <button class="tweet-btn" id="openModal">Post</button>
       </nav>
       <div class="sidebar-user">
         <img src="images/avatar.jpg" alt="Your avatar" class="avatar-sm"/>
@@ -55,17 +55,245 @@
 
     <!-- MAIN FEED -->
     <main class="main-feed">
+
       <header class="feed-header">
         <h1>Home</h1>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <i class="bi bi-moon-stars"></i>
+        </button>
       </header>
-      <p class="placeholder-text">Feed coming soon...</p>
+
+      <!-- FEED TABS -->
+      <div class="feed-tabs">
+        <button class="feed-tab active">For you</button>
+        <button class="feed-tab">Following</button>
+      </div>
+
+      <!-- TWEET COMPOSER -->
+      <div class="composer">
+        <img src="images/avatar.jpg" alt="Your avatar" class="avatar-sm"/>
+        <div class="composer-input-wrap">
+          <textarea id="composerText" placeholder="What is happening?!" rows="1"></textarea>
+          <div class="composer-actions">
+            <div class="composer-icons">
+              <button class="tweet-action" aria-label="Add image"><i class="bi bi-image"></i></button>
+              <button class="tweet-action" aria-label="Add gif"><i class="bi bi-filetype-gif"></i></button>
+              <button class="tweet-action" aria-label="Add emoji"><i class="bi bi-emoji-smile"></i></button>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px">
+              <span class="char-count" id="charCount">280</span>
+              <button class="composer-post" id="postBtn">Post</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TWEET CARDS -->
+      <div id="feed">
+
+        <div class="tweet">
+          <img src="images/avatar.jpg" alt="Mukelani avatar" class="avatar-sm"/>
+          <div class="tweet-body">
+            <div class="tweet-header">
+              <a href="profile.html" class="tweet-name">Mukelani</a>
+              <span class="tweet-handle">@studentzero68</span>
+              <span class="tweet-dot">·</span>
+              <span class="tweet-time">2h</span>
+            </div>
+            <p class="tweet-content">Just deployed my Baker's Delight project — a recipe cookbook with gamer jokes, anime references and symbolism for every bake. Built section by section, committed piece by piece. <span class="tweet-hashtag">#WebDev</span> <span class="tweet-hashtag">#iHubAfrica</span></p>
+            <div class="tweet-actions">
+              <button class="tweet-action reply" aria-label="Reply"><i class="bi bi-chat"></i><span>12</span></button>
+              <button class="tweet-action retweet" aria-label="Retweet"><i class="bi bi-repeat"></i><span>8</span></button>
+              <button class="tweet-action like" aria-label="Like"><i class="bi bi-heart"></i><span>47</span></button>
+              <button class="tweet-action" aria-label="Share"><i class="bi bi-upload"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tweet">
+          <img src="images/avatar2.jpg" alt="User avatar" class="avatar-sm"/>
+          <div class="tweet-body">
+            <div class="tweet-header">
+              <a href="#" class="tweet-name">Zaio</a>
+              <span class="tweet-handle">@zaio_io</span>
+              <span class="tweet-dot">·</span>
+              <span class="tweet-time">4h</span>
+            </div>
+            <p class="tweet-content">Proud of our students shipping real projects every week. From HTML to JavaScript to full deployed apps — this is what learning looks like in action. <span class="tweet-hashtag">#LearnToCode</span></p>
+            <div class="tweet-actions">
+              <button class="tweet-action reply" aria-label="Reply"><i class="bi bi-chat"></i><span>34</span></button>
+              <button class="tweet-action retweet" aria-label="Retweet"><i class="bi bi-repeat"></i><span>21</span></button>
+              <button class="tweet-action like" aria-label="Like"><i class="bi bi-heart"></i><span>112</span></button>
+              <button class="tweet-action" aria-label="Share"><i class="bi bi-upload"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tweet">
+          <img src="images/avatar3.jpg" alt="User avatar" class="avatar-sm"/>
+          <div class="tweet-body">
+            <div class="tweet-header">
+              <a href="#" class="tweet-name">Jacksepticeye</a>
+              <span class="tweet-handle">@Jack_Septic_Eye</span>
+              <span class="tweet-dot">·</span>
+              <span class="tweet-time">6h</span>
+            </div>
+            <p class="tweet-content">Gaming is not just entertainment. It teaches you problem solving, patience and how to adapt when things do not go the way you planned. Pretty much the same skills you need in real life.</p>
+            <div class="tweet-actions">
+              <button class="tweet-action reply" aria-label="Reply"><i class="bi bi-chat"></i><span>204</span></button>
+              <button class="tweet-action retweet" aria-label="Retweet"><i class="bi bi-repeat"></i><span>1.2K</span></button>
+              <button class="tweet-action like" aria-label="Like"><i class="bi bi-heart"></i><span>8.4K</span></button>
+              <button class="tweet-action" aria-label="Share"><i class="bi bi-upload"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tweet">
+          <img src="images/avatar.jpg" alt="Mukelani avatar" class="avatar-sm"/>
+          <div class="tweet-body">
+            <div class="tweet-header">
+              <a href="profile.html" class="tweet-name">Mukelani</a>
+              <span class="tweet-handle">@studentzero68</span>
+              <span class="tweet-dot">·</span>
+              <span class="tweet-time">1d</span>
+            </div>
+            <p class="tweet-content">Dark mode, light mode, purple and gold — the YouTube clone is fully deployed. Every section committed separately so you can follow exactly how it was built. That is discipline right there. <span class="tweet-hashtag">#100DaysOfCode</span></p>
+            <div class="tweet-actions">
+              <button class="tweet-action reply" aria-label="Reply"><i class="bi bi-chat"></i><span>7</span></button>
+              <button class="tweet-action retweet" aria-label="Retweet"><i class="bi bi-repeat"></i><span>3</span></button>
+              <button class="tweet-action like" aria-label="Like"><i class="bi bi-heart"></i><span>29</span></button>
+              <button class="tweet-action" aria-label="Share"><i class="bi bi-upload"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tweet">
+          <img src="images/avatar4.jpg" alt="User avatar" class="avatar-sm"/>
+          <div class="tweet-body">
+            <div class="tweet-header">
+              <a href="#" class="tweet-name">FreeCodeCamp</a>
+              <span class="tweet-handle">@freeCodeCamp</span>
+              <span class="tweet-dot">·</span>
+              <span class="tweet-time">1d</span>
+            </div>
+            <p class="tweet-content">You do not need to be the smartest person in the room. You just need to be the one who keeps showing up. Consistency beats talent when talent does not show up. <span class="tweet-hashtag">#coding</span> <span class="tweet-hashtag">#motivation</span></p>
+            <div class="tweet-actions">
+              <button class="tweet-action reply" aria-label="Reply"><i class="bi bi-chat"></i><span>89</span></button>
+              <button class="tweet-action retweet" aria-label="Retweet"><i class="bi bi-repeat"></i><span>456</span></button>
+              <button class="tweet-action like" aria-label="Like"><i class="bi bi-heart"></i><span>2.1K</span></button>
+              <button class="tweet-action" aria-label="Share"><i class="bi bi-upload"></i></button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
     </main>
 
     <!-- RIGHT SIDEBAR -->
     <aside class="sidebar-right">
-      <p class="placeholder-text">Trends coming soon...</p>
+
+      <div class="search-box">
+        <i class="bi bi-search"></i>
+        <input type="text" placeholder="Search"/>
+      </div>
+
+      <!-- TRENDS WIDGET -->
+      <div class="widget">
+        <div class="widget-header">Trends for you</div>
+
+        <div class="widget-item">
+          <div class="trend-category">Gaming · Trending</div>
+          <div class="trend-name">#EldenRing</div>
+          <div class="trend-posts">48.2K posts</div>
+        </div>
+        <div class="widget-item">
+          <div class="trend-category">Technology · Trending</div>
+          <div class="trend-name">#WebDev</div>
+          <div class="trend-posts">12.4K posts</div>
+        </div>
+        <div class="widget-item">
+          <div class="trend-category">South Africa · Trending</div>
+          <div class="trend-name">#iHubAfrica</div>
+          <div class="trend-posts">3.1K posts</div>
+        </div>
+        <div class="widget-item">
+          <div class="trend-category">Anime · Trending</div>
+          <div class="trend-name">#DemonSlayer</div>
+          <div class="trend-posts">91.7K posts</div>
+        </div>
+        <div class="widget-item">
+          <div class="trend-category">Coding · Trending</div>
+          <div class="trend-name">#100DaysOfCode</div>
+          <div class="trend-posts">22.3K posts</div>
+        </div>
+
+        <a href="explore.html" class="widget-footer">Show more</a>
+      </div>
+
+      <!-- WHO TO FOLLOW -->
+      <div class="widget">
+        <div class="widget-header">Who to follow</div>
+
+        <div class="follow-item">
+          <img src="images/avatar2.jpg" alt="Zaio avatar" class="avatar-sm"/>
+          <div class="follow-info">
+            <div class="user-name">Zaio</div>
+            <div class="user-handle">@zaio_io</div>
+          </div>
+          <button class="follow-btn">Follow</button>
+        </div>
+
+        <div class="follow-item">
+          <img src="images/avatar3.jpg" alt="Jacksepticeye avatar" class="avatar-sm"/>
+          <div class="follow-info">
+            <div class="user-name">Jacksepticeye</div>
+            <div class="user-handle">@Jack_Septic_Eye</div>
+          </div>
+          <button class="follow-btn">Follow</button>
+        </div>
+
+        <div class="follow-item">
+          <img src="images/avatar4.jpg" alt="FreeCodeCamp avatar" class="avatar-sm"/>
+          <div class="follow-info">
+            <div class="user-name">freeCodeCamp</div>
+            <div class="user-handle">@freeCodeCamp</div>
+          </div>
+          <button class="follow-btn">Follow</button>
+        </div>
+
+        <a href="#" class="widget-footer">Show more</a>
+      </div>
+
     </aside>
 
+  </div>
+
+  <!-- MOBILE NAV -->
+  <nav class="mobile-nav">
+    <a href="index.html" class="active" aria-label="Home"><i class="bi bi-house-fill"></i></a>
+    <a href="explore.html" aria-label="Explore"><i class="bi bi-search"></i></a>
+    <a href="notifications.html" aria-label="Notifications"><i class="bi bi-bell"></i></a>
+    <a href="messages.html" aria-label="Messages"><i class="bi bi-envelope"></i></a>
+  </nav>
+
+  <!-- MOBILE COMPOSE BUTTON -->
+  <button class="mobile-compose" id="mobileCompose" aria-label="Compose tweet">
+    <i class="bi bi-plus-lg"></i>
+  </button>
+
+  <!-- TWEET MODAL -->
+  <div class="modal-overlay" id="tweetModal">
+    <div class="modal">
+      <div class="modal-header">
+        <button class="modal-close" id="closeModal" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+        <button class="modal-post" id="modalPostBtn">Post</button>
+      </div>
+      <div class="modal-body">
+        <img src="images/avatar.jpg" alt="Your avatar" class="avatar-sm"/>
+        <textarea id="modalText" placeholder="What is happening?!"></textarea>
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>
